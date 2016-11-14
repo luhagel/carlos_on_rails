@@ -13,6 +13,11 @@ class PostsController < ApplicationController
       redirect_to root_url
     end
   end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = @post.comments.new
+  end
   
   private
   def post_params

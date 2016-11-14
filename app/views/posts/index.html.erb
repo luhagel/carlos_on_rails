@@ -1,7 +1,9 @@
 <h1>Posts</h1>
-<%= link_to "New Post", new_post_url %> <br>
+<%= link_to "New Post", new_post_url, class: "btn btn-primary" %> <br>
 <% @posts.each do |post| %>
-  <%= post.title %>
-  <%= post.user %>
-  <%= post.content %> 
+  <%= link_to post do %>
+    <h4><%= post.title %></h4>
+    <p><%= post.user %></p>
+    <p><%= post.content %> </p>
+  <% end %>
 <% end %>
