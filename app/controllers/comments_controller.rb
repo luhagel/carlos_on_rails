@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
+    @subreddit = Subreddit.find(@post.subreddit_id)
     @comment = Comment.new(comment_params)
     @comment.post = @post
 
     if @comment.save
-      redirect_to @post
+      redirect_to [@subreddit, @post]
     end
   end
 

@@ -2,8 +2,9 @@
 <%= link_to "New Post", new_post_url, class: "btn btn-primary" %> <br>
 <% @posts.each do |post| %>
   <%= link_to post do %>
-    <h4><%= post.title %></h4>
-    <p><%= post.user %></p>
-    <p><%= post.content %> </p>
+    <div class="card card-block">
+      <h4 class="card-title"><%= post.title %></h4>
+      <p class="card-text"><%= post.content %></p>
+    </div>
   <% end %>
 <% end %>

@@ -1,0 +1,6 @@
+<h1>Subreddits#index</h1>
+<% @subreddits.each do |s| %>
+  <div class="card card-block">
+  <%= link_to s.name, s %>
+  </div>
+<% end %>

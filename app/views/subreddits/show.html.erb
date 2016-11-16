@@ -1,0 +1,11 @@
+<h1><%= @subreddit.name %></h1>
+<br>
+<%= link_to "New Post", new_subreddit_post_path(@subreddit), class: "btn btn-primary" %> <br>
+<% @subreddit.posts.each do |post| %>
+  <%= link_to [@subreddit, post] do %>
+    <div class="card card-block">
+      <h4 class="card-title"><%= post.title %></h4>
+      <p class="card-text"><%= post.content %></p>
+    </div>
+  <% end %>
+<% end %>
