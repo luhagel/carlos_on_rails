@@ -1,13 +1,25 @@
+<br>
+<div class="row">
+<div class="card card-block">
 <h2><%= @post.title %></h2>
-<%= @post.content %>
+<p><%= @post.content %></p>
+</div>
+</div>
 
-
+<div class="container">
+<div class="row">
 <h5>New Comment:</h5>
-<%= form_for [@subreddit, @post, @comment] do |f| %>
-  <p><%= f.text_area :content, placeholder: "Write something..." %></p>
-  <%= f.submit "Post" %>
+<%= form_for [@subreddit, @post, @comment], class: "form-group" do |f| %>
+  <p><%= f.text_area :content, placeholder: "Write something...", class: "form-control" %></p>
+  <%= f.submit "Post", class: "form-control" %>
 <% end %>
+</div>
+<div class="row">
+<% @post.comments[0..-2].each do |c| %>
+  <div class="card card-block">
+    <p><%= c.content %></p>
+  </div>
+<% end %>
+</div>
+</div>
 
-<% @post.comments.each do |c| %>
-  <p><%= c.content %></p>
-<% end %>

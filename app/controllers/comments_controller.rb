@@ -5,6 +5,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.post = @post
 
+    if @comment.content.length == 0 
+      redirect_to [@subreddit, @post]
+      return
+    end
+
     if @comment.save
       redirect_to [@subreddit, @post]
     end
