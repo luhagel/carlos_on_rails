@@ -1,4 +1,5 @@
 <h1>Subreddits#index</h1>
+<%= link_to "New Subreddit", new_subreddit_url, class: "btn btn-primary" %> <br>
 <% @subreddits.each do |s| %>
   <div class="card card-block">
   <%= link_to s.name, s %>

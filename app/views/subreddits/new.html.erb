@@ -1,0 +1,6 @@
+<h1>New Subreddit</h1>
+
+<%= form_for (@subreddit) do |s| %>
+  <p><%= s.text_field :name, placeholder: "Subreddit Name" %></p>
+  <%= s.submit "Create" %>
+<% end %>

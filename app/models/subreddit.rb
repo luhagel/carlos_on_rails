@@ -1,4 +1,4 @@
 class Subreddit < ApplicationRecord
   has_many :posts
-  validates :name, :slug, presence: true
+  validates :name, presence: true
 end
