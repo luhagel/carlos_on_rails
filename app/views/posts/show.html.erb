@@ -11,9 +11,10 @@
 <h5>New Comment:</h5>
 <%= form_for [@subreddit, @post, @comment], class: "form-group" do |f| %>
   <p><%= f.text_area :content, placeholder: "Write something...", class: "form-control" %></p>
-  <%= f.submit "Post", class: "form-control" %>
+  <%= f.submit "Post", class: "btn btn-default" %>
 <% end %>
 </div>
+<br>
 <div class="row">
 <% @post.comments[0..-2].each do |c| %>
   <div class="card card-block">
