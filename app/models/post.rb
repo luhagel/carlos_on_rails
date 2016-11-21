@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
   has_many :comments
+
   belongs_to :subreddit
-  validates :title, :content, :user, presence: true
+  belongs_to :user
+
+  validates :title, :content, presence: true
 end

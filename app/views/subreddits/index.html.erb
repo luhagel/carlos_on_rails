@@ -1,7 +1,16 @@
-<h1>Carlos on Rails</h1>
-<%= link_to "New Subreddit", new_subreddit_url, class: "btn btn-primary" %> <br>
-<% @subreddits.each do |s| %>
-  <div class="card card-block">
-  <%= link_to s.name, s %>
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Carlos on Rails</h1>
   </div>
+  <div class="col-sm-6 text-right float-sm-left">
+    <%= link_to "New Subreddit", new_subreddit_url, class: "btn btn-primary" %>
+  </div>  
+</div>
+<br>
+<% @subreddits.each do |s| %>
+  <%= link_to s do%>
+    <div class="card card-block">
+    <p class="card-title"><%= s.name %></p>
+    </div>
+  <% end %>
 <% end %>

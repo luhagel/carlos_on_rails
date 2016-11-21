@@ -2,7 +2,8 @@ require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
   def setup
-    @post = Post.create(title: "MY new post", content: "This post is awesome", user: "LucaDaGitMasta")
+    @subreddit = Subreddit.new(name: "Random stuff", slug: "random_stuff")
+    @post = Post.create(title: "MY new post", content: "This post is awesome", user: users(:one), subreddit: @subreddit)
   end
 
   test "is post valid" do

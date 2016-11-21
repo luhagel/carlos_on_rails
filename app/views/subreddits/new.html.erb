@@ -1,6 +1,6 @@
 <h1>New Subreddit</h1>
 
 <%= form_for (@subreddit) do |s| %>
-  <p><%= s.text_field :name, placeholder: "Subreddit Name" %></p>
-  <%= s.submit "Create" %>
+  <p><%= s.text_field :name, placeholder: "Subreddit Name", class: "form-control" %></p>
+  <%= s.submit "Create", class: "btn btn-default" %>
 <% end %>

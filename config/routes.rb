@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'subreddits/index'
+  devise_for :users
 
   resources :subreddits, only: [:index, :show, :new, :create] do
-    resources :posts, only: [:index, :new, :create, :show] do
+    resources :posts, only: [:new, :create, :show] do
       resources :comments, only: [:create]
     end
   end

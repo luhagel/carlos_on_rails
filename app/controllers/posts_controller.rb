@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   def index
     @posts = Post.all
   end
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
     @subreddit = Subreddit.find(params[:subreddit_id])
     @post = Post.new(post_params)
     @post.subreddit = @subreddit
+    @post.user = current_user
     if @post.save
       redirect_to [@subreddit, @post]
     end
@@ -25,7 +27,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:title, :content, :user, :subreddit_id)
+    params.require(:post).permit(:title, :content, :user_id, :subreddit_id)
   end
 
 end

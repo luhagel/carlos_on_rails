@@ -13,3 +13,19 @@
  */
 
  @import "bootstrap";
+ @import "./subreddits.scss";
+ @import "./posts.scss";
+
+ a, a:hover {
+   color: black;
+   text-decoration: none;
+ }
+
+ a:hover .card-title {
+   color: royalblue;
+   transition: color 0.3s ease-in-out;
+ }
+
+ a .card-title {
+   transition: color 0.3s ease-in-out;
+ }

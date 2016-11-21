@@ -1,8 +1,7 @@
 <h1>New Post</h1>
 
 <%= form_for [@subreddit, @post] do |f| %>
-  <p><%= f.text_field :title, placeholder: "Title" %></p> 
-  <p><%= f.text_field :user, placeholder: "Username" %></p>
-  <p><%= f.text_area :content, placeholder: "Write something..." %></p>
-  <%= f.submit "Post" %>
+  <p><%= f.text_field :title, placeholder: "Title", class: "form-control" %></p> 
+  <p><%= f.text_area :content, placeholder: "Write something...", class: "form-control" %></p>
+  <%= f.submit "Post", class: "btn btn-default" %>
 <% end %>
